@@ -2,6 +2,7 @@
 Takes a CSV file from Heap and makes it easier to process in Excel.
 
 # How to use it:
+- This assumes you're on a Mac. If you're on Windows, make sure you have a way to run Ruby. 
 - Download the CSV file from Heap for the report "Who is ignoring smart choices?"
 - Save the rb file in the directory of your CSV download.
 - in the command line in that directory, run:
