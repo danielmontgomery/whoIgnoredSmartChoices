@@ -25,22 +25,22 @@ end
 newTable = [["Company Name", "Count of SC Clicks", "Count of Non-SC Clicks", "Total"]]
 
 for i in table do
-  if i[0].match('Count of Clicked Non-Smart Choice "Book" Button')
-    newTable << [i[1], 0, i[3]]
+  if i[0].match('Count of 7.10: Clicked "Book" On Any SC Rate')
+    newTable << [i[1], i[3], 0]
 
   elsif
     # check if there are matches for Company name.
     # If so, amend that row in newTable.
     # If not, make a new row in newTable.
     for x in newTable do
-      if i[2].match(x[0]) && i[0].match('Count of Clicked ANY Smart Choice Rate')
+      if i[2].match(x[0]) && i[0].match('Count of 7.10: Clicked "Book" On Any Non-SC Rate')
         puts "match #{i[2]} and #{x[0]}"
-        x[1] = i[3]
+        x[2] = i[3]
         break
       end
     end
     puts "no match for #{i[2]}"
-    newTable << [i[2], i[3], 0]
+    newTable << [i[2], 0, i[3]]
   end
 end
 
